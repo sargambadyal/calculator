@@ -3,17 +3,18 @@ class InputOutput
   def initialize
     @parser = Parser.new
   end
+
   def input
     Kernel.gets
   end
+
   def output
-    puts Kernel.puts @parser.operation input
+    Kernel.puts @parser.operation(input)
   end
 
   def console
     while true
-      #input
-    output
+      output
     end
   end
 end

@@ -2,32 +2,39 @@
 class Router
   def initialize
     @calculator = Calculator.new
+    @operations_history = OperationsHistory.new
   end
 
-  def result input
-    case input[0]
+  def result operation
+    operator = operation.operator
+    operand = operation.operand
+    @operations_history.push(operation) unless operator == "repeat"
+    case operator
       when 'add'
-        @calculator + (input[1])
+        @calculator + (operand)
       when 'sub'
-        @calculator - (input[1])
+        @calculator - (operand)
       when 'mul'
-        @calculator * (input[1])
+        @calculator * (operand)
       when 'div'
-        @calculator / (input[1])
+        @calculator / (operand)
       when 'cancel'
         return @calculator.reset()
       when 'abs'
-        return @calculator.abs(input[1])
+        return @calculator.abs(operand)
       when 'neg'
-        return @calculator.neg(input[1])
+        return @calculator.neg(operand)
       when 'sqr'
-        return @calculator.sqr(input[1])
+        return @calculator.sqr(operand)
       when 'sqrt'
-        return @calculator.sqrt(input[1])
+        return @calculator.sqrt(operand)
       when 'cube'
-        return @calculator.cube(input[1])
+        return @calculator.cube(operand)
       when 'cubert'
-        return @calculator.cubert(input[1])
+        return @calculator.cubert(operand)
+
+      when 'repeat'
+        repeat (operand)
       when 'exit'
         exit
       else
@@ -39,6 +46,17 @@ private
   def exit
     Process.exit
   end
+
+  def repeat counter
+    operations = @operations_history.retrieve counter
+    result_val =0
+    operations.each do |operation|
+      result_val = result operation
+    end
+    return result_val
+  end
+
+
 
 end
 

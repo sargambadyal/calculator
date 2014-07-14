@@ -15,7 +15,17 @@ describe Router do
   context "Exit Check" do
     it 'should check if Process receives exit' do
       expect(Process).to receive(:exit)
-      router.exit
+      operation = Operation.new("exit" )
+      router.result (operation)
+    end
+  end
+
+  context "repeat" do
+    it "should process last" do
+      router.result(["add",5])
+      router.result(["sub", 3])
+      router.result(["mul",2 ])
+      expect(router.result(["repeat",2])).to eq(2)
     end
   end
 end
