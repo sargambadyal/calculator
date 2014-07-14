@@ -1,6 +1,10 @@
-require_relative 'calculation/input_output'
 require_relative 'calculation/calculator'
-require_relative 'calculation/parser'
 require_relative 'calculation/router'
 require_relative 'calculation/operation'
-require_relative'calculation/operations_history'
+require_relative 'calculation/operations_history'
+
+require_relative 'calculation/command'
+require_relative 'calculation/command/nil_command'
+require_relative 'calculation/command/add_command'
+require_relative 'calculation/parser'
+require_relative 'calculation/input_output'

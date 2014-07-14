@@ -3,12 +3,12 @@ require 'spec_helper'
 describe InputOutput do
   let(:io_operation) { InputOutput.new }
 
-  context "Input Check" do
-    it 'check whether input received in console' do
-      expect(Kernel).to receive(:gets)
-      io_operation.input
-    end
-  end
+  # context "Input Check" do
+  #   it 'check whether input received in console' do
+  #     expect(Kernel).to receive(:gets)
+  #     io_operation.input
+  #   end
+  # end
 
 
   context 'I/O check' do

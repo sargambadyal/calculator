@@ -1,5 +1,5 @@
-#return application
-require_relative 'calculation'
+#run application
+
 class Application
   def initialize
     puts "Starting to Accept your Inputs"

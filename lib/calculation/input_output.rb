@@ -1,15 +1,15 @@
 #Manages the Input / Output
 class InputOutput
+
   def initialize
-    @parser = Parser.new
+    @calculator = Calculator.new
   end
 
-  def input
-    Kernel.gets
-  end
 
   def output
-    Kernel.puts @parser.operation(input)
+    parser = Parser.new(@calculator)
+    command = parser.parse(input)
+    Kernel.puts command.perform
   end
 
   def console
@@ -17,4 +17,10 @@ class InputOutput
       output
     end
   end
+
+  private
+  def input
+    Kernel.gets
+  end
+
 end
