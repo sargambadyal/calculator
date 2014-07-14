@@ -16,8 +16,8 @@ class Parser
       when "add"
         AddCommand.new(@calculator, operand.to_f)
 
-      # when 'sub'
-      #   @calculator - (operand)
+      when 'sub'
+        SubtractCommand.new(@calculator, operand.to_f)
       # when 'mul'
       #   @calculator * (operand)
       # when 'div'
@@ -37,8 +37,8 @@ class Parser
       # when 'cubert'
       #   return @calculator.cubert(operand)
       #
-      # when 'repeat'
-      #   repeat (operand)
+      when 'repeat'
+        RepeatCommand.new(@calculator, operand)
       # when 'exit'
       #   exit
       else
