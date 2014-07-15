@@ -15,16 +15,16 @@ describe 'RepeatCommand' do
       ch
     end
 
-    context '#perform' do
+    context '#execute' do
       it 'should repeat last n commands' do
         repeat_command = RepeatCommand.new(command_history_with_data, calculator, 2)
-        expect(repeat_command.perform).to eq(4)
+        expect(repeat_command.execute).to eq(4)
       end
 
       it 'raise an alert when number of commands are less than specified' do
         count =4
         repeat_command = RepeatCommand.new(command_history_with_data, calculator, count)
-        expect(repeat_command.perform).to eq("Commands History do not have #{count} commands.")
+        expect(repeat_command.execute).to eq("Commands History do not have #{count} commands.")
 
       end
 

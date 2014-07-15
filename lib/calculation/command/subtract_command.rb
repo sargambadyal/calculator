@@ -5,7 +5,7 @@ class SubtractCommand < Command
     super commands_history, calculator, operand
   end
 
-  def perform
+  def execute
     @calculator.- @operand
   end
 

@@ -1,5 +1,5 @@
 #run application
-
+require_relative 'calculation'
 class Application
   def initialize
     puts "Starting to Accept your Inputs"
@@ -8,4 +8,4 @@ class Application
   end
 end
 
-#Application.new()
+#Application.new

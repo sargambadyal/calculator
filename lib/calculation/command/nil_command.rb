@@ -4,7 +4,7 @@ class NilCommand < Command
   def initialize
   end
 
-  def perform
+  def execute
     "Unable to process"
   end
 end
