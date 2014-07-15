@@ -8,7 +8,7 @@ class InputOutput
 
 
   def output
-    parser = Parser.new(@calculator , @commands_history)
+    parser = Parser.new(@calculator,@commands_history)
     command = parser.parse(input)
     Kernel.puts command.perform
   end
