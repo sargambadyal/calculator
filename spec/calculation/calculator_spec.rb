@@ -53,27 +53,27 @@ describe Calculator do
 
         context "Absolute value" do
           it 'should be 2.0 for input -2.0'do
-            calculator = Calculator.new()
-            expect(calculator.abs(-2.0)).to eq(2.0)
+            calculator = Calculator.new(-2.0)
+            expect(calculator.abs).to eq(2.0)
           end
         end
 
-        context "Negation" do
+        context "NegationCommand" do
           it 'should be 2.0 for input -2.0'do
-            calculator = Calculator.new()
-            expect(calculator.neg(2.0)).to eq(-2.0)
+            calculator = Calculator.new(2.0)
+            expect(calculator.neg).to eq(-2.0)
           end
         end
 
         context "Square Root" do
           it 'should be 2.0 for input 4.0'do
-            calculator = Calculator.new()
-            expect(calculator.sqrt(4.0)).to eq(2.0)
+            calculator = Calculator.new(4.0)
+            expect(calculator.sqrt).to eq(2.0)
           end
 
           it 'should not throw exception for -1' do
-            calculator = Calculator.new()
-            expect{calculator.sqrt(-1.0)}.to_not raise_error
+            calculator = Calculator.new(-1)
+            expect{calculator.sqrt}.to_not raise_error
           end
 
 
@@ -81,23 +81,23 @@ describe Calculator do
 
         context "Square" do
           it 'should be 4.0 for input 2.0'do
-            calculator = Calculator.new()
-            expect(calculator.sqr(2.0)).to eq(4.0)
+            calculator = Calculator.new(2.0)
+            expect(calculator.sqr).to eq(4.0)
           end
         end
 
 
         context "Cube" do
           it 'should be 8.0 for input 2.0'do
-            calculator = Calculator.new()
-            expect(calculator.cube(2.0)).to eq(8.0)
+            calculator = Calculator.new(2.0)
+            expect(calculator.cube).to eq(8.0)
           end
         end
 
         context "Cube Root" do
           it 'should be 2.0 for input 8.0'do
-            calculator = Calculator.new()
-            expect(calculator.cubert(8.0)).to eq(2.0)
+            calculator = Calculator.new(8.0)
+            expect(calculator.cubert).to eq(2.0)
           end
         end
 

@@ -1,8 +1,10 @@
 #Performs arithmetic operations
 class Calculator
+
   def initialize initial_state=0
     @state=initial_state
   end
+
 
   def + value
     @state = value + @state
@@ -26,34 +28,36 @@ class Calculator
     end
   end
 
-  def abs value
-    @state = value.abs
+
+  def abs
+    @state = @state.abs
   end
 
-
-  def neg value
-    @state = -(value)
+  def neg
+    @state = -(@state)
   end
 
-  def sqrt value
+  def sqrt
     begin
-      @state = Math.sqrt value
+      @state = Math.sqrt @state
     rescue
       puts "Returns Complex number"
     end
   end
 
-  def sqr value
-    @state = value ** 2
+  def sqr
+    @state = @state ** 2
   end
 
-  def cube value
-    @state = value ** 3
+  def cube
+    @state = @state ** 3
   end
 
-  def cubert value
-    @state = Math.cbrt value
+  def cubert
+    @state = Math.cbrt @state
+
   end
+
 
   def reset
     @state = 0

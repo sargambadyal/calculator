@@ -1,11 +1,11 @@
-#Performs multiplication
-class MultiplyCommand < Command
+#Performs the negation
+class NegationCommand < Command
   def initialize commands_history, calculator, operand
     super commands_history, calculator, operand
   end
 
   def execute
-    @calculator.* @operand
+    @calculator.neg
   end
 
 end
