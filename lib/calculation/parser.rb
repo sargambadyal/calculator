@@ -17,8 +17,8 @@ class Parser
       #   @calculator * (operand)
       # when 'div'
       #   @calculator / (operand)
-      # when 'cancel'
-      #   return @calculator.reset()
+      when 'cancel'
+      CancelCommand.new(@commands_history,@calculator,operand)
       # when 'abs'
       #   return @calculator.abs(operand)
       # when 'neg'

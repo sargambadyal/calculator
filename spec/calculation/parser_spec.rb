@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Parser do
   context "#parse" do
     let(:calculator) { Calculator.new }
-    let(:commands_history) {CommandsHistory.new}
+    let(:commands_history) { CommandsHistory.new }
     let(:parser) { Parser.new(calculator, commands_history) }
 
     it 'should return instance of AddCommand' do
@@ -26,7 +26,10 @@ describe Parser do
       expect(parser.parse(input_string)).to be_an_instance_of(ExitCommand)
     end
 
-
+    it 'should return instance of CancelCommand' do
+      input_string = "cancel"
+      expect(parser.parse(input_string)).to be_an_instance_of(CancelCommand)
+    end
 
 
   end

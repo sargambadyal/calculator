@@ -1,11 +1,11 @@
-# Exits the process
-class ExitCommand < Command
+#Resets the calculator to state 0
+class CancelCommand < Command
   def initialize (commands_history, calculator, operand)
-
+    @calculator = calculator
   end
 
   def execute
-    Process.exit
+   @calculator.reset
   end
 
   private
