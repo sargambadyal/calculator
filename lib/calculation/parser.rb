@@ -5,11 +5,6 @@ class Parser
     @commands_history = commands_history
   end
 
-  # def operation input
-  #   parsed_input = parse input
-  #   @router.result parsed_input
-  # end
-
   def parse (input_string)
     operator, operand = input_string.split
     case operator

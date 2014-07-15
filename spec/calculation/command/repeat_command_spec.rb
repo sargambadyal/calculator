@@ -21,14 +21,6 @@ describe 'RepeatCommand' do
         expect(repeat_command.execute).to eq(4)
       end
 
-      it 'raise an alert when number of commands are less than specified' do
-        count =4
-        repeat_command = RepeatCommand.new(command_history_with_data, calculator, count)
-        expect(repeat_command.execute).to eq("Commands History do not have #{count} commands.")
-
-      end
-
-
     end
 
     context 'commands history' do
@@ -36,6 +28,7 @@ describe 'RepeatCommand' do
         expect(command.commands_history.size).to eq(0)
       end
     end
+
   end
 
 end

@@ -5,7 +5,7 @@ class Command
     @commands_history = commands_history
     @calculator = calculator
     @operand = operand
-    add_to_history if history_enabled
+    add_to_history
   end
 
   def ==(other)

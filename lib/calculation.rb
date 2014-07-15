@@ -1,6 +1,4 @@
 require_relative 'calculation/calculator'
-require_relative 'calculation/router'
-require_relative 'calculation/operation'
 require_relative 'calculation/commands_history'
 
 require_relative 'calculation/command'
