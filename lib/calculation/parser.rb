@@ -35,7 +35,7 @@ class Parser
       when 'repeat'
         RepeatCommand.new(@commands_history, @calculator, operand)
       when 'exit'
-        ExitCommand.new()
+        ExitCommand.new(@commands_history, @calculator, operand)
       else
        NilCommand.new
     end
