@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe 'SubtractCommand' do
-
+  let(:commands_history) { CommandsHistory.new }
   let(:calculator) { Calculator.new(10) }
-  let(:command) { SubtractCommand.new(calculator, 5)}
+  let(:command) { SubtractCommand.new(commands_history,calculator, 5)}
 
   context '#perform' do
 

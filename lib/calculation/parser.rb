@@ -1,23 +1,23 @@
 #Parses the input and returns correct command object
 class Parser
-  def initialize calculator
-    #@router = Router.new
+  def initialize (calculator , commands_history)
     @calculator = calculator
+    @commands_history = commands_history
   end
 
-  def operation input
-    parsed_input = parse input
-    @router.result parsed_input
-  end
+  # def operation input
+  #   parsed_input = parse input
+  #   @router.result parsed_input
+  # end
 
-  def parse input_string
+  def parse (input_string)
     operator, operand = input_string.split
     case operator
       when "add"
-        AddCommand.new(@calculator, operand.to_f)
+        AddCommand.new(@commands_history, @calculator, operand.to_f)
 
       when 'sub'
-        SubtractCommand.new(@calculator, operand.to_f)
+        SubtractCommand.new(@commands_history, @calculator, operand.to_f)
       # when 'mul'
       #   @calculator * (operand)
       # when 'div'
@@ -38,7 +38,7 @@ class Parser
       #   return @calculator.cubert(operand)
       #
       when 'repeat'
-        RepeatCommand.new(@calculator, operand)
+        RepeatCommand.new(@commands_history, @calculator, operand)
       # when 'exit'
       #   exit
       else

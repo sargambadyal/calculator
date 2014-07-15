@@ -2,7 +2,7 @@
 class Router
   def initialize
     @calculator = Calculator.new
-    @operations_history = OperationsHistory.new
+    @operations_history = CommandsHistory.new
   end
 
   def result operation

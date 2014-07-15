@@ -3,7 +3,8 @@ require 'spec_helper'
 describe Parser do
   context "#parse" do
     let(:calculator) { Calculator.new }
-    let(:parser) { Parser.new(calculator) }
+    let(:commands_history) {CommandsHistory.new}
+    let(:parser) { Parser.new(calculator, commands_history) }
 
     it 'should return correct instance of AddCommand' do
       input_string = "add 5"

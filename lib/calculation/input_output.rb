@@ -3,11 +3,12 @@ class InputOutput
 
   def initialize
     @calculator = Calculator.new
+    @commands_history = CommandsHistory.new
   end
 
 
   def output
-    parser = Parser.new(@calculator)
+    parser = Parser.new(@calculator , @commands_history)
     command = parser.parse(input)
     Kernel.puts command.perform
   end
